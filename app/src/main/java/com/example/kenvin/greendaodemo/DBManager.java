@@ -3,6 +3,10 @@ package com.example.kenvin.greendaodemo;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.kenvin.greendaodemo.gen.DaoMaster;
+import com.example.kenvin.greendaodemo.gen.DaoSession;
+import com.example.kenvin.greendaodemo.gen.UserDao;
+
 import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.List;

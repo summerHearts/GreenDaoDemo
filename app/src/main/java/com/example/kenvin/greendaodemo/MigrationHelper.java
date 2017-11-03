@@ -4,6 +4,8 @@ import android.database.Cursor;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.kenvin.greendaodemo.gen.DaoMaster;
+
 import org.greenrobot.greendao.AbstractDao;
 import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.internal.DaoConfig;
