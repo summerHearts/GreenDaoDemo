@@ -19,7 +19,8 @@ public class DBManager {
 
     private final static String dbName = "test_db";
 
-    private static DBManager mInstance;
+    //多线程中要被共享的使用volatile关键字修饰
+    private volatile static DBManager mInstance;
 
     private DaoMaster.DevOpenHelper openHelper;
 

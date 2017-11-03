@@ -22,7 +22,7 @@ android {
 }
 
 greendao {
-    schemaVersion 3
+    schemaVersion 5
     daoPackage 'com.example.kenvin.greendaodemo.gen'
     targetGenDir 'src/main/java'
 }

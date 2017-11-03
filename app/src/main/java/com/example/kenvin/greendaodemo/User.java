@@ -17,14 +17,17 @@ public class User {
     private int age;
     private long savetime;//保存时间
     private String newColum;//新增字段
+    private String workSpace;
 
-    @Generated(hash = 931384610)
-    public User(Long id, String name, int age, long savetime, String newColum) {
+    @Generated(hash = 902892696)
+    public User(Long id, String name, int age, long savetime, String newColum,
+            String workSpace) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.savetime = savetime;
         this.newColum = newColum;
+        this.workSpace = workSpace;
     }
 
     @Generated(hash = 586692638)
@@ -69,5 +72,13 @@ public class User {
 
     public void setNewColum(String newColum) {
         this.newColum = newColum;
+    }
+
+    public String getWorkSpace() {
+        return workSpace;
+    }
+
+    public void setWorkSpace(String workSpace) {
+        this.workSpace = workSpace;
     }
 }

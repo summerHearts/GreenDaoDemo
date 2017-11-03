@@ -29,6 +29,7 @@ public class UserDao extends AbstractDao<User, Long> {
         public final static Property Age = new Property(2, int.class, "age", false, "AGE");
         public final static Property Savetime = new Property(3, long.class, "savetime", false, "SAVETIME");
         public final static Property NewColum = new Property(4, String.class, "newColum", false, "NEW_COLUM");
+        public final static Property WorkSpace = new Property(5, String.class, "workSpace", false, "WORK_SPACE");
     }
 
 
@@ -48,7 +49,8 @@ public class UserDao extends AbstractDao<User, Long> {
                 "\"NAME\" TEXT," + // 1: name
                 "\"AGE\" INTEGER NOT NULL ," + // 2: age
                 "\"SAVETIME\" INTEGER NOT NULL ," + // 3: savetime
-                "\"NEW_COLUM\" TEXT);"); // 4: newColum
+                "\"NEW_COLUM\" TEXT," + // 4: newColum
+                "\"WORK_SPACE\" TEXT);"); // 5: workSpace
     }
 
     /** Drops the underlying database table. */
@@ -77,6 +79,11 @@ public class UserDao extends AbstractDao<User, Long> {
         if (newColum != null) {
             stmt.bindString(5, newColum);
         }
+ 
+        String workSpace = entity.getWorkSpace();
+        if (workSpace != null) {
+            stmt.bindString(6, workSpace);
+        }
     }
 
     @Override
@@ -99,6 +106,11 @@ public class UserDao extends AbstractDao<User, Long> {
         if (newColum != null) {
             stmt.bindString(5, newColum);
         }
+ 
+        String workSpace = entity.getWorkSpace();
+        if (workSpace != null) {
+            stmt.bindString(6, workSpace);
+        }
     }
 
     @Override
@@ -113,7 +125,8 @@ public class UserDao extends AbstractDao<User, Long> {
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
             cursor.getInt(offset + 2), // age
             cursor.getLong(offset + 3), // savetime
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // newColum
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // newColum
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5) // workSpace
         );
         return entity;
     }
@@ -125,6 +138,7 @@ public class UserDao extends AbstractDao<User, Long> {
         entity.setAge(cursor.getInt(offset + 2));
         entity.setSavetime(cursor.getLong(offset + 3));
         entity.setNewColum(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setWorkSpace(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
      }
     
     @Override
